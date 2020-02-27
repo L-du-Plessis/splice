@@ -1,2 +1,2 @@
 # splice
-E-commerce page using Sass and Vue.js
+Responsive E-commerce page using Sass and Vue.js
