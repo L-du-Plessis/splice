@@ -1,0 +1,498 @@
+/* Sass Variables */
+/* Vue v-cloak */
+[v-cloak] {
+  display: none; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #f3f3f3; }
+
+/* Header */
+.header {
+  background: #f3f3f3;
+  padding: 0 12%;
+  height: 50px; }
+
+/* Cart icons */
+.cart-icons {
+  position: absolute;
+  top: 0;
+  right: 12%; }
+
+/* Round button */
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  width: 2.3em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 7px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  outline: none; }
+
+/* Green icon */
+.icon {
+  color: #4CAF50;
+  font-size: 1em;
+  vertical-align: middle; }
+
+/* Circle icon */
+.icon-circle {
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 6px;
+  width: 2.1em;
+  text-align: center;
+  font-size: 1.1em;
+  margin: 3px 10px;
+  border-radius: 50%; }
+
+/* Logo header */
+.logo-header {
+  display: flex;
+  padding: 0 12%;
+  background-color: white; }
+
+.logo-header > div {
+  margin: 0;
+  padding: 20px 5px; }
+
+/* Logo */
+.logo {
+  width: 330px;
+  margin: -15px 0px; }
+
+/* Text style */
+.text {
+  color: #666;
+  font-size: 0.8em; }
+
+.input-wrapper {
+  position: relative;
+  padding-left: 20px;
+  min-width: 400px; }
+
+/* Search input */
+.search {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  color: #666;
+  border-radius: 25px;
+  font-size: 0.8em;
+  font-weight: bold;
+  background-color: #f3f3f3;
+  padding: 12px 20px 12px 40px;
+  outline: none; }
+
+.input-icon {
+  position: absolute;
+  color: #666;
+  font-size: 1.1em;
+  left: 15px;
+  top: 31px; }
+
+/* Question button */
+.question {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  color: #666;
+  border-radius: 25px;
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: white;
+  padding: 11px 20px 11px 40px;
+  cursor: pointer;
+  outline: none; }
+
+.question:before {
+  content: "\f059";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.3em;
+  position: absolute;
+  left: 12px;
+  top: 8px; }
+
+.question:hover {
+  background-color: #f1f1f1; }
+
+/* Hide elements on smaller screens */
+@media screen and (max-width: 1350px) {
+  #text-div {
+    display: none; }
+
+  .input-wrapper {
+    margin-left: 20%; } }
+@media screen and (max-width: 1005px) {
+  .input-wrapper {
+    display: none; }
+
+  .slider-container {
+    display: none; } }
+/* Banner slider */
+.slider-container {
+  height: 150px;
+  padding-top: 30px; }
+
+.center-div {
+  margin: auto;
+  width: 690px; }
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.8s ease;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  position: absolute; }
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  visibility: hidden; }
+
+/* Product filter menu container */
+.product-menu {
+  margin: 30px 13% 0 13%;
+  background: #4CAF50;
+  height: 50px; }
+
+/* <hr> div */
+.hr-div {
+  padding: 1px 13% 12px 13%;
+  margin-top: 30px; }
+
+/* Products grid */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 12%; }
+
+.products-column {
+  position: relative;
+  flex: 22%;
+  padding: 20px 20px;
+  margin: 14px;
+  background-color: white;
+  min-width: 230px; }
+
+/* Break to 2 columns */
+@media screen and (max-width: 1380px) {
+  .products-column {
+    flex: 44%; } }
+/* Amount style */
+.amount {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  font-size: 1.6em;
+  color: #666;
+  padding-left: 15px; }
+
+.amount:before {
+  content: "R";
+  font-size: 0.7em;
+  position: absolute;
+  left: 0;
+  top: 6px; }
+
+.add-button, .remove-button {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  color: white;
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: #666;
+  cursor: pointer;
+  outline: none;
+  float: right; }
+
+/* Add button */
+.add-button {
+  position: relative;
+  padding: 11px 15px 11px 40px; }
+
+.add-button:before {
+  content: "\f291";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.3em;
+  position: absolute;
+  left: 12px;
+  top: 8px; }
+
+.add-button:hover {
+  background-color: #808080; }
+
+/* Remove button */
+.remove-button {
+  padding: 11px 15px; }
+
+.remove-button:hover {
+  background-color: #808080; }
+
+/* Product image */
+.product-image {
+  display: block;
+  width: 220px;
+  margin-top: 30px;
+  width: 80%; }
+
+/* Product type */
+.product-type {
+  text-align: left;
+  font-size: 1em;
+  color: #666;
+  padding: 5px 0; }
+
+/* Product name */
+.product-name {
+  display: block;
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #666;
+  padding: 5px 0 30px 0; }
+
+.product-name:hover {
+  text-decoration: underline; }
+
+/* Add to wishlist */
+.wishlist {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: block;
+  font-size: 0.7em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #666; }
+
+.wishlist:hover {
+  color: #4CAF50; }
+
+/* Footer */
+.footer {
+  padding: 20px;
+  background: #ddd;
+  margin-top: 50px; }
+
+/* Footer grid */
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 12%; }
+
+.footer-column {
+  padding: 10px 20px; }
+
+/* Footer heading */
+.footer-heading {
+  display: block;
+  text-align: left;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #666;
+  padding: 10px 0; }
+
+/* Gray icon */
+.icon-gray {
+  display: inline-block;
+  color: #666;
+  font-size: 1em;
+  margin: 0 8px;
+  float: left;
+  vertical-align: top;
+  padding: 8px 0; }
+
+/* Footer link */
+.footer-link {
+  display: block;
+  text-align: left;
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #666;
+  padding: 8px 0; }
+
+.footer-link:hover {
+  text-decoration: underline; }
+
+/* Brand logos grid */
+.brands-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 12%;
+  align-items: center; }
+
+.brands-grid > div {
+  padding: 10px 20px; }
+
+/* Break to 1 column */
+@media screen and (max-width: 600px) {
+  .footer-grid {
+    flex-direction: column; } }
+/*** Header dropdown menu ***/
+/*Strip the ul of padding and list styling*/
+.header {
+  /*Create a horizontal list with spacing*/
+  /*Style for menu links*/
+  /*Hover state for top level links*/
+  /*Style for dropdown links*/
+  /*Hover state for dropdown links*/
+  /*Hide dropdown links until they are needed*/
+  /*Make dropdown links vertical*/
+  /*Prevent text wrapping*/
+  /*Display the dropdown on hover*/
+  /*Style 'show menu' label button and hide it by default*/
+  /*Hide checkbox*/
+  /*Show menu when invisible checkbox is checked*/ }
+  .header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute; }
+  .header li {
+    display: inline-block;
+    float: left;
+    margin-right: 1px; }
+  .header li a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #666;
+    background: #f3f3f3;
+    text-decoration: none;
+    padding: 0 20px; }
+  .header li:hover a {
+    color: #fff;
+    background: #4CAF50; }
+  .header li:hover ul a {
+    background: #f3f3f3;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px; }
+  .header li:hover ul a:hover {
+    background: #a6a6a6;
+    color: #fff; }
+  .header li ul {
+    display: none; }
+  .header li ul li {
+    display: block;
+    float: none; }
+  .header li ul li a {
+    width: auto;
+    min-width: 200px;
+    padding: 0 20px; }
+  .header ul li a:hover + .hidden, .header .hidden:hover {
+    display: block;
+    z-index: 1; }
+  .header .show-menu {
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #666;
+    background: #f3f3f3;
+    padding: 0px 20px;
+    height: 50px;
+    line-height: 50px;
+    display: none; }
+  .header input[type=checkbox] {
+    display: none; }
+  .header input[type=checkbox]:checked ~ #menu {
+    display: block; }
+
+/*Responsive Styles*/
+@media screen and (max-width: 760px) {
+  /*Make dropdown links appear inline*/
+  .header {
+    /*Create vertical spacing*/
+    /*Make all menu links full width*/
+    /*Display 'show menu' link*/ }
+    .header ul {
+      position: static;
+      display: none; }
+    .header li {
+      margin-bottom: 1px; }
+    .header ul li, .header li a {
+      width: 100%; }
+    .header .show-menu {
+      display: inline-block; } }
+/*** Product filter menu ***/
+/*Strip the ul of padding and list styling*/
+.product-menu {
+  /*Create a horizontal list with spacing*/
+  /*Style for menu links*/
+  /*Hover state for top level links*/
+  /*Style for dropdown links*/
+  /*Hover state for dropdown links*/
+  /*Hide dropdown links until they are needed*/
+  /*Make dropdown links vertical*/
+  /*Prevent text wrapping*/
+  /*Display the dropdown on hover*/ }
+  .product-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute; }
+  .product-menu li {
+    display: inline-block;
+    float: left;
+    margin-right: 1px; }
+  .product-menu li a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+    background: #4CAF50;
+    text-decoration: none;
+    padding: 0 20px; }
+  .product-menu li:hover a {
+    color: #fff;
+    background: #666; }
+  .product-menu li:hover ul a {
+    background: #e6e6e6;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px; }
+  .product-menu li:hover ul a:hover {
+    background: #a6a6a6;
+    color: #fff; }
+  .product-menu li ul {
+    display: none; }
+  .product-menu li ul li {
+    display: block;
+    float: none; }
+  .product-menu li ul li a {
+    width: auto;
+    min-width: 200px;
+    padding: 0 20px; }
+  .product-menu ul li a:hover + .hidden, .product-menu .hidden:hover {
+    display: block;
+    z-index: 1; }
+
+/*Responsive Styles*/
+@media screen and (max-width: 760px) {
+  /*Make dropdown links appear inline*/
+  .product-menu {
+    /*Create vertical spacing*/
+    /*Make all menu links full width*/ }
+    .product-menu ul {
+      position: static; }
+    .product-menu li {
+      margin-bottom: 1px; }
+    .product-menu ul li, .product-menu li a {
+      width: 100%; } }
+
+/*# sourceMappingURL=splice.css.map */

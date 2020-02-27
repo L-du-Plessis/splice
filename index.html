@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Splice Test</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS includes -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/splice.css">
+
+</head>
+<body>
+<div id="app">
+
+<!-- Header dropdown menu -->
+<div class="header">
+  <span>
+    <label for="show-menu" class="show-menu"><i class="fas fa-bars"></i>&nbsp; Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+    <ul id="menu">
+      <li><a href="">Home</a></li>
+      <li>
+        <a href="#">Shop Brands &nbsp;<i class="fas fa-chevron-down"></i></a>
+        <ul class="hidden">
+          <li><a href="#">Skin Renewal</a></li>
+          <li><a href="#">Lamelle</a></li>
+          <li><a href="#">Alpha</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Shop Product Type &nbsp;<i class="fas fa-chevron-down"></i></a>
+        <ul class="hidden">
+          <li><a href="#">Gift Vouchers</a></li>
+          <li><a href="#">Cream</a></li>
+          <li><a href="#">Oral Supplement</a></li>
+        </ul>
+      </li>
+    </ul>
+  </span>
+  <span class="cart-icons" v-cloak>
+    <a href="#"><i class="fas fa-shopping-cart icon"></i></a>
+    <button class="button">{{ cartTotal }}</button>
+  </span>
+</div>
+
+<!-- Logo header -->
+<div class="logo-header">
+  <div><a href="#"><img class="logo" src="images/logo.png"></a></div>
+  <div id="text-div" style="flex-basis:40%; padding-left:10px">
+    <div class="text"><i class="fas fa-award icon-circle"></i>Earn loyalty points & redeem discounts</div>
+    <div class="text"><i class="fas fa-lock icon-circle"></i>Secure Transactions</div>
+  </div>
+  <div class="input-wrapper">
+    <input id="search" class="search" type="text" placeholder="What are you looking for?">
+    <label for="search" class="fas fa-search input-icon"></label>
+    <button class="question">Got A Question?</button>
+  </div>
+</div>
+
+<!-- Banner slider -->
+<div class="slider-container">
+  <div class="center-div">
+    <div name='fade'>
+      <div v-for="number in [currentNumber]" :key='number'>
+        <a href="#"><img :src="currentImage"/></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product filter menu -->
+<div class="product-menu">
+    <ul id="menu-products">
+      <li>
+        <a href="#">Product Type &nbsp;<i class="fas fa-chevron-down"></i></a>
+        <ul class="hidden">
+          <li><a href="#">Gift Vouchers(1)</a></li>
+          <li><a href="#">Cream(1)</a></li>
+          <li><a href="#">Oral Supplements(2)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Brand &nbsp;<i class="fas fa-chevron-down"></i></a>
+        <ul class="hidden">
+          <li><a href="#">Skin Renewal(1)</a></li>
+          <li><a href="#">Lamelle(1)</a></li>
+          <li><a href="#">Alpha(2)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Price &nbsp;<i class="fas fa-chevron-down"></i></a>
+        <ul class="hidden">
+          <li><a href="#">Price Slider</a></li>
+        </ul>
+      </li>
+    </ul>
+</div>
+<div class="hr-div"><hr></div>
+
+<!-- Products grid -->
+<div class="products-grid">
+  <div class="products-column" v-for="product in products" v-cloak>
+    <div class="amount">{{ product.amount }}</div>
+    <button v-show="!product.added" class="add-button" @click="addCartClicked(product)">Add</button>
+    <button v-show="product.added" class="remove-button" @click="removeCartClicked(product)">Remove</button>
+    <a href="#"><img class="product-image" :title="product.title" :src="product.image"></a>
+    <div class="product-type">{{ product.type }}</div>
+    <a class="product-name" href="#">{{ product.name }}</a>
+    <a class="wishlist" href="#"><i class="fas fa-heart fa-lg"></i> Add to Wishlist</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-grid">
+    <div id="footer-col1" class="footer-column" style="flex-basis:20%; min-width:200px">
+      <a class="footer-heading" href="#">Shop Top Brands</a>
+      <a class="footer-link" href="#">Skin Renewal</a>
+      <a class="footer-link" href="#">Lamelle</a>
+      <a class="footer-link" href="#">Alpha</a>
+    </div>
+    <div id="footer-col2" class="footer-column" style="flex-basis:20%; min-width:200px">
+      <a class="footer-heading" href="#">Skin Shop</a>
+      <a class="footer-link" href="#">Gift Vouchers</a>
+      <a class="footer-link" href="#">Cream</a>
+      <a class="footer-link" href="#">Oral Supplements</a>
+    </div>
+    <div id="footer-col3" class="footer-column" style="flex-basis:60%; min-width:130px">
+      <span style="float:right">
+        <a href="#"><i class="fab fa-facebook-f icon-gray"></i></a>
+        <a href="#"><i class="fab fa-twitter icon-gray"></i></a>
+        <a href="#"><i class="fab fa-youtube icon-gray"></i></a>
+      </span>
+    </div>
+  </div>
+  
+  <!-- Brand logos grid -->
+  <div class="brands-grid">
+    <div><a href="#"><img src="images/footer-number.png"></a></div>
+    <div><img src="images/footer-visa.png"></div>
+    <div><img src="images/footer-genop.png"></div>
+    <div><img src="images/footer-lamelle.png"></div>
+  </div>
+</div>
+
+</div>  <!-- app div -->
+
+<!-- JavaScript includes -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+<script src="assets/splice.js"></script>
+
+</body>
+</html>

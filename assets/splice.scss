@@ -1,0 +1,385 @@
+/* Sass Variables */
+$font-stack: Helvetica, Arial, sans-serif;
+$font-awesome: "Font Awesome 5 Free";
+$background-color: #f3f3f3;
+$footer-color: #ddd;
+$font-color: #666;
+$green-color: #4CAF50;
+$white-color: #fff;
+$border-color: #ccc;
+$button-hover: #808080;
+$question-hover: #f1f1f1;
+$dropdown-color: #2f3036;
+$dropdown-bgcolor: #a6a6a6;
+$menu-bgcolor: #e6e6e6;
+
+
+/* Vue v-cloak */
+[v-cloak] { display:none; }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-stack;
+  background: $background-color;
+}
+
+/* Header */
+.header {
+  background: $background-color;
+  padding: 0 12%;
+  height: 50px;
+}
+
+/* Cart icons */
+.cart-icons {
+  position: absolute;
+  top: 0;
+  right: 12%;
+}
+
+/* Round button */
+.button {
+  background-color: $green-color;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  width: 2.3em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 7px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  outline: none;
+}
+
+/* Green icon */
+.icon {
+  color: $green-color;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+/* Circle icon */
+.icon-circle {
+  background-color: $green-color;
+  color: white;
+  padding: 6px 6px;
+  width: 2.1em;
+  text-align: center;
+  font-size: 1.1em;
+  margin: 3px 10px;
+  border-radius: 50%;
+}
+
+/* Logo header */
+.logo-header {
+  display: flex;
+  padding: 0 12%;
+  background-color: white;
+}
+.logo-header > div {
+  margin: 0;
+  padding: 20px 5px;
+}
+
+/* Logo */
+.logo {
+  width: 330px;
+  margin: -15px 0px;
+}
+
+/* Text style */
+.text {
+  color: $font-color;
+  font-size: 0.8em;
+}
+
+.input-wrapper {
+  position: relative;
+  padding-left: 20px;
+  min-width: 400px;
+}
+
+/* Search input */
+.search {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  color: $font-color;
+  border-radius: 25px;
+  font-size: 0.8em;
+  font-weight: bold;
+  background-color: $background-color;
+  padding: 12px 20px 12px 40px;
+  outline: none;
+}
+.input-icon {
+  position: absolute;
+  color: $font-color;
+  font-size: 1.1em;
+  left: 15px;
+  top: 31px;
+}
+
+/* Question button */
+.question {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  color: $font-color;
+  border-radius: 25px;
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: white;
+  padding: 11px 20px 11px 40px;
+  cursor: pointer;
+  outline: none;
+}
+.question:before {
+  content: "\f059";
+  font-family: $font-awesome;
+  font-weight: 900;
+  font-size: 1.3em;
+  position: absolute;
+  left: 12px;
+  top: 8px;
+}
+.question:hover {background-color: $question-hover;}
+
+/* Hide elements on smaller screens */
+@media screen and (max-width: 1350px) {
+  #text-div {display: none;}
+  .input-wrapper {margin-left: 20%;}
+}
+
+@media screen and (max-width: 1005px) {
+  .input-wrapper {display: none;}
+  .slider-container {display: none;}
+}
+
+/* Banner slider */
+.slider-container {
+  height: 150px;
+  padding-top: 30px;
+}
+.center-div {
+  margin: auto;
+  width: 690px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.8s ease;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Product filter menu container */
+.product-menu {
+  margin: 30px 13% 0 13%;
+  background: $green-color;
+  height: 50px;
+}
+
+/* <hr> div */
+.hr-div {
+  padding: 1px 13% 12px 13%;
+  margin-top: 30px;
+}
+
+/* Products grid */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 12%;
+}
+.products-column {
+  position: relative;
+  flex: 22%;
+  padding: 20px 20px;
+  margin: 14px;
+  background-color: white;
+  min-width: 230px;
+}
+
+/* Break to 2 columns */
+@media screen and (max-width: 1380px) {
+  .products-column {
+    flex: 44%;
+  }
+}
+
+/* Amount style */
+.amount {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  font-size: 1.6em;
+  color: $font-color;
+  padding-left: 15px;
+}
+.amount:before {
+  content: "R";
+  font-size: 0.7em;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+%add-remove-button {
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  color: white;
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: $font-color;
+  cursor: pointer;
+  outline: none;
+  float: right;
+}
+
+/* Add button */
+.add-button {
+  @extend %add-remove-button;
+  position: relative;
+  padding: 11px 15px 11px 40px;
+}
+.add-button:before {
+  content: "\f291";
+  font-family: $font-awesome;
+  font-weight: 900;
+  font-size: 1.3em;
+  position: absolute;
+  left: 12px;
+  top: 8px;
+}
+.add-button:hover {background-color: $button-hover;}
+
+/* Remove button */
+.remove-button {
+  @extend %add-remove-button;  
+  padding: 11px 15px;
+}
+.remove-button:hover {background-color: $button-hover;}
+
+/* Product image */
+.product-image {
+  display: block;
+  width: 220px;
+  margin-top: 30px;
+  width: 80%;
+}
+
+/* Product type */
+.product-type {
+  text-align: left;
+  font-size: 1em;
+  color: $font-color;
+  padding: 5px 0;
+}
+
+/* Product name */
+.product-name {
+  display: block;
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: $font-color;
+  padding: 5px 0 30px 0;
+}
+.product-name:hover {text-decoration: underline;}
+
+/* Add to wishlist */
+.wishlist {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: block;
+  font-size: 0.7em;
+  font-weight: bold;
+  text-decoration: none;
+  color: $font-color;
+}
+.wishlist:hover {color: $green-color;}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  background: $footer-color;
+  margin-top: 50px;
+}
+
+/* Footer grid */
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 12%;
+}
+.footer-column {
+  padding: 10px 20px;
+}
+
+/* Footer heading */
+.footer-heading {
+  display: block;
+  text-align: left;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  color: $font-color;
+  padding: 10px 0;
+}
+
+/* Gray icon */
+.icon-gray {
+  display: inline-block;
+  color: $font-color;
+  font-size: 1em;
+  margin: 0 8px;
+  float: left;
+  vertical-align: top;
+  padding: 8px 0;
+}
+
+/* Footer link */
+.footer-link {
+  display: block;
+  text-align: left;
+  font-size: 0.8em;
+  text-decoration: none;
+  color: $font-color;
+  padding: 8px 0;
+}
+.footer-link:hover {text-decoration: underline;}
+
+/* Brand logos grid */
+.brands-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 12%;
+  align-items: center;
+}
+.brands-grid > div {
+  padding: 10px 20px;
+}
+
+/* Break to 1 column */
+@media screen and (max-width: 600px) {
+  .footer-grid {
+    flex-direction: column;
+  }
+}
+
+@import 'menus';
